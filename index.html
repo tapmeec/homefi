@@ -3,200 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homeFi | Link in Bio Preview</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
+    <title>homeFi | Enlaces</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .phone-frame {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        body {
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Perfil / Header */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #eaeaea;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 6px;
+        }
+
+        p.bio {
+            font-size: 0.9rem;
+            color: #666666;
+            max-width: 320px;
+            line-height: 1.4;
+        }
+
+        /* Contenedor de Enlaces */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .bio-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 16px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .bio-link:hover {
+            transform: translateY(-2px);
+            border-color: #111111;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .bio-link:hover .link-icon-right {
+            color: #ffffff;
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .link-content i {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Efectos especiales en hover por botón */
+        .bio-link.whatsapp:hover {
+            background-color: #25D366;
+            border-color: #25D366;
+        }
+
+        .link-icon-right {
+            font-size: 0.85rem;
+            color: #aaa;
+            transition: color 0.25s ease;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888888;
+            text-align: center;
+        }
+
+        footer a {
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-white">
+<body>
 
-    <!-- Top Navigation / Controls Bar -->
-    <header class="w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-wrap justify-between items-center gap-4">
-        <div class="flex items-center space-x-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-slate-800 to-slate-700 border border-slate-700 flex items-center justify-center shadow-inner">
-                <i class="fa-solid fa-mobile-screen-button text-cyan-400"></i>
+    <div class="container">
+        <!-- Perfil -->
+        <div class="profile-card">
+            <div class="logo-container">
+                <img src="https://homefi.com.ec/wp-content/uploads/2024/06/Recurso-2-fotor-2024062814430-100x100.png" alt="homeFi Logo">
             </div>
-            <div>
-                <h1 class="font-bold text-base tracking-tight text-white">homeFi <span class="text-xs uppercase px-2 py-0.5 ml-2 bg-cyan-950 text-cyan-300 border border-cyan-800/60 rounded-full font-semibold">Preview Studio</span></h1>
-                <p class="text-xs text-slate-400">Panel interactivo de Link in Bio</p>
-            </div>
+            <h1>homeFi</h1>
+            <p class="bio">Tecnología y domótica para transformar cada espacio de tu hogar en una experiencia inteligente.</p>
         </div>
 
-        <!-- View Toggle Controls -->
-        <div class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 shadow-sm">
-            <button id="btn-mobile" onclick="switchView('mobile')" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-cyan-600 text-white shadow">
-                <i class="fa-solid fa-mobile-screen"></i>
-                <span>Vista Móvil</span>
-            </button>
-            <button id="btn-desktop" onclick="switchView('desktop')" class="flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white">
-                <i class="fa-solid fa-desktop"></i>
-                <span>Vista Escritorio</span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Main Content Canvas Area -->
-    <main class="flex-1 flex items-center justify-center p-4 sm:p-8 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/40 via-slate-900 to-slate-950">
-        
-        <!-- Ambient Glow Effects -->
-        <div class="absolute -top-32 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <!-- Dynamic Container Framework -->
-        <div id="preview-container" class="phone-frame w-full max-w-[420px] bg-white text-slate-900 rounded-[3rem] shadow-2xl border-4 border-slate-800 overflow-hidden flex flex-col relative my-auto">
-            
-            <!-- Mobile Speaker / Notch simulation -->
-            <div id="phone-notch" class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-20 flex items-center justify-center">
-                <div class="w-12 h-1 bg-slate-700 rounded-full"></div>
-            </div>
-
-            <!-- Scrollable Content View -->
-            <div class="flex-1 overflow-y-auto px-6 pt-12 pb-10 flex flex-col items-center">
-                
-                <!-- Profile Header -->
-                <div class="w-full flex flex-col items-center text-center mt-4 mb-6">
-                    <!-- Logo container -->
-                    <div class="w-24 h-24 rounded-full bg-white border-2 border-slate-100 shadow-lg shadow-slate-200/50 flex items-center justify-center p-3 mb-4 relative group transition-transform duration-300 hover:scale-105">
-                        <img src="https://homefi.com.ec/wp-content/uploads/2024/06/Recurso-2-fotor-2024062814430-100x100.png" 
-                             alt="homeFi Logo" 
-                             class="w-full h-full object-contain"
-                             onerror="this.src='https://placehold.co/100x100/111111/ffffff?text=homeFi'">
-                        <div class="absolute -bottom-1 -right-1 bg-emerald-500 w-5 h-5 rounded-full border-2 border-white flex items-center justify-center" title="Verificado">
-                            <i class="fa-solid fa-check text-[10px] text-white"></i>
-                        </div>
-                    </div>
-
-                    <h2 class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-1.5">
-                        homeFi
-                    </h2>
-                    <p class="text-xs font-semibold text-cyan-600 mb-2">Smart Home & Domótica en Ecuador</p>
-                    <p class="text-xs text-slate-500 max-w-[280px] leading-relaxed">
-                        Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.
-                    </p>
+        <!-- Enlaces -->
+        <div class="links-container">
+            <!-- Página Web -->
+            <a href="https://homefi.com.ec/" target="_blank" class="bio-link">
+                <div class="link-content">
+                    <i class="fa-solid fa-globe" style="color: #111;"></i>
+                    <span>Visita nuestra Tienda Online</span>
                 </div>
+                <i class="fa-solid fa-chevron-right link-icon-right"></i>
+            </a>
 
-                <!-- Links Stack -->
-                <div class="w-full flex flex-col gap-3.5">
-                    
-                    <!-- Website Link -->
-                    <a href="https://homefi.com.ec/" target="_blank" rel="noopener noreferrer" 
-                       class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-slate-800 flex items-center justify-center text-slate-800 group-hover:text-cyan-400 transition-colors">
-                                <i class="fa-solid fa-globe text-base"></i>
-                            </div>
-                            <div class="text-left">
-                                <span class="block text-sm font-semibold tracking-tight">Tienda Online Oficial</span>
-                                <span class="block text-[11px] text-slate-400 group-hover:text-slate-400">homefi.com.ec</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-
-                    <!-- WhatsApp Link -->
-                    <a href="https://wa.me/593967788686?text=Hola%20homeFi.%20Necesito%20más%20información%20sobre%20sus%20productos." target="_blank" rel="noopener noreferrer" 
-                       class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 group-hover:bg-emerald-600 flex items-center justify-center text-emerald-600 group-hover:text-white transition-colors">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                            </div>
-                            <div class="text-left">
-                                <span class="block text-sm font-semibold tracking-tight">Atención por WhatsApp</span>
-                                <span class="block text-[11px] text-slate-400 group-hover:text-emerald-100">+593 96 778 8686</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-
-                    <!-- Instagram Link -->
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                       class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-pink-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-pink-50 group-hover:bg-white/20 flex items-center justify-center text-pink-600 group-hover:text-white transition-colors">
-                                <i class="fa-brands fa-instagram text-lg"></i>
-                            </div>
-                            <div class="text-left">
-                                <span class="block text-sm font-semibold tracking-tight">Síguenos en Instagram</span>
-                                <span class="block text-[11px] text-slate-400 group-hover:text-pink-100">@homefi.ec</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-
-                    <!-- Google Review Link -->
-                    <a href="https://g.page/r/homefi-resena" target="_blank" rel="noopener noreferrer" 
-                       class="group flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 group-hover:bg-amber-600 flex items-center justify-center text-amber-500 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-star text-base"></i>
-                            </div>
-                            <div class="text-left">
-                                <span class="block text-sm font-semibold tracking-tight">Califícanos en Google</span>
-                                <span class="block text-[11px] text-slate-400 group-hover:text-amber-100">Déjanos tu reseña 5 estrellas</span>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-
-                </div>
-
-                <!-- Footer branding inside frame -->
-                <div class="mt-8 text-center">
-                    <p class="text-[11px] text-slate-400">Powered by <span class="font-semibold text-slate-700">homeFi Ecuador</span></p>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer info -->
-    <footer class="w-full bg-slate-950 border-t border-slate-800/80 py-3 px-6 text-center text-xs text-slate-400">
-        <p>Vista previa interactiva optimizada para experiencias móviles y de escritorio.</p>
-    </footer>
-
-    <!-- Interactive Toggle Script -->
-    <script>
-        function switchView(mode) {
-            const container = document.getElementById('preview-container');
-            const notch = document.getElementById('phone-notch');
-            const btnMobile = document.getElementById('btn-mobile');
-            const btnDesktop = document.getElementById('btn-desktop');
-
-            if (mode === 'desktop') {
-                // Expand to desktop view
-                container.classList.remove('max-w-[420px]', 'rounded-[3rem]', 'border-4');
-                container.classList.add('max-w-[850px]', 'h-[640px]', 'rounded-2xl', 'border', 'shadow-2xl');
-                notch.style.display = 'none';
-
-                // Button styling states
-                btnDesktop.className = "flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-cyan-600 text-white shadow";
-                btnMobile.className = "flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white";
-            } else {
-                // Restore mobile view
-                container.classList.remove('max-w-[850px]', 'h-[640px]', 'rounded-2xl', 'border');
-                container.classList.add('max-w-[420px]', 'rounded-[3rem]', 'border-4');
-                container.style.height = '';
-                notch.style.display = 'flex';
-
-                // Button styling states
-                btnMobile.className = "flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all bg-cyan-600 text-white shadow";
-                btnDesktop.className = "flex items-center space-x-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white";
-            }
-        }
-    </script>
-</body>
-</html>
+            <!-- WhatsApp -->
+            <a href="
