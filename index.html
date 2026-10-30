@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homeFi | Enlaces</title>
+    <title>homeFi | Link in Bio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .logo-container {
@@ -71,11 +71,20 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: #111111;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0098da;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         p.bio {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666666;
             max-width: 320px;
             line-height: 1.4;
@@ -86,7 +95,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .bio-link {
@@ -95,12 +104,10 @@
             justify-content: space-between;
             background-color: #ffffff;
             border: 1px solid #e5e5e5;
-            padding: 16px 20px;
+            padding: 14px 18px;
             border-radius: 14px;
             text-decoration: none;
             color: #1a1a1a;
-            font-weight: 600;
-            font-size: 0.95rem;
             transition: all 0.25s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
@@ -109,42 +116,46 @@
             transform: translateY(-2px);
             border-color: #111111;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-            background-color: #111111;
-            color: #ffffff;
         }
 
-        .bio-link:hover .link-icon-right {
-            color: #ffffff;
-        }
-
-        .link-content {
+        .link-left {
             display: flex;
             align-items: center;
             gap: 14px;
         }
 
-        .link-content i {
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
+        .link-icon-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background-color: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
         }
 
-        /* Efectos especiales en hover por botón */
-        .bio-link.whatsapp:hover {
-            background-color: #25D366;
-            border-color: #25D366;
+        .link-text h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 2px;
         }
 
-        .link-icon-right {
-            font-size: 0.85rem;
-            color: #aaa;
-            transition: color 0.25s ease;
+        .link-text span {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .link-arrow {
+            font-size: 0.8rem;
+            color: #ccc;
         }
 
         /* Footer */
         footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
+            margin-top: 35px;
+            font-size: 0.75rem;
             color: #888888;
             text-align: center;
         }
@@ -165,19 +176,74 @@
                 <img src="https://homefi.com.ec/wp-content/uploads/2024/06/Recurso-2-fotor-2024062814430-100x100.png" alt="homeFi Logo">
             </div>
             <h1>homeFi</h1>
-            <p class="bio">Tecnología y domótica para transformar cada espacio de tu hogar en una experiencia inteligente.</p>
+            <div class="subtitle">Smart Home & Domótica en Ecuador</div>
+            <p class="bio">Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.</p>
         </div>
 
         <!-- Enlaces -->
         <div class="links-container">
             <!-- Página Web -->
             <a href="https://homefi.com.ec/" target="_blank" class="bio-link">
-                <div class="link-content">
-                    <i class="fa-solid fa-globe" style="color: #111;"></i>
-                    <span>Visita nuestra Tienda Online</span>
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #0098da;">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Tienda Online Oficial</h3>
+                        <span>homefi.com.ec</span>
+                    </div>
                 </div>
-                <i class="fa-solid fa-chevron-right link-icon-right"></i>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
             </a>
 
             <!-- WhatsApp -->
-            <a href="
+            <a href="https://wa.me/593967788686?text=Hola%20homeFi.%20Necesito%20más%20información%20sobre%20sus%20productos." target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #25D366;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Atención por WhatsApp</h3>
+                        <span>+593 96 778 6868[cite: 1]</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #E1306C;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Síguenos en Instagram</h3>
+                        <span>@homefi.ec</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+
+            <!-- Reseña de Google -->
+            <a href="https://g.page/r/tu-enlace-de-google-business" target="_blank" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #FBBC05;">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Califícanos en Google</h3>
+                        <span>Déjanos tu reseña 5 estrellas</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right link-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 <a href="https://homefi.com.ec/">homeFi</a>. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
