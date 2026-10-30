@@ -34,35 +34,36 @@
         .main-card {
             background-color: #ffffff;
             width: 100%;
-            max-width: 460px;
+            max-width: 480px;
             border-radius: 36px;
-            padding: 45px 24px 30px 24px;
+            padding: 50px 28px 32px 28px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Perfil / Header con Círculo de Logo grande */
+        /* Perfil / Header con Círculo de Logo más grande y expandido */
         .profile-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+            width: 100%;
         }
 
         .logo-container {
-            width: 120px;
-            height: 120px;
+            width: 160px;  /* Círculo bastante más grande */
+            height: 160px; /* Círculo bastante más grande */
             border-radius: 50%;
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 12px;
-            padding: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            margin-bottom: 16px;
+            padding: 10px;
             border: 2px solid #eaeaea;
             position: relative;
         }
@@ -70,33 +71,33 @@
         .logo-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Mantiene la proporción expandida para mejor lectura */
             border-radius: 50%;
         }
 
-        /* Insignia de verificación verde opcional */
+        /* Insignia de verificación verde adaptada al nuevo tamaño */
         .verified-badge {
             position: absolute;
-            bottom: 4px;
-            right: 4px;
+            bottom: 6px;
+            right: 6px;
             background-color: #22c55e;
             color: white;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            border: 2px solid white;
+            font-size: 0.85rem;
+            border: 3px solid white;
         }
 
         p.bio {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #64748b;
-            max-width: 320px;
+            max-width: 360px;
             line-height: 1.4;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         /* Contenedor de Enlaces */
@@ -113,7 +114,7 @@
             justify-content: space-between;
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            padding: 14px 18px;
+            padding: 15px 18px;
             border-radius: 18px;
             text-decoration: none;
             color: #1a1a1a;
@@ -181,7 +182,7 @@
         <!-- Perfil / Logo -->
         <div class="profile-card">
             <div class="logo-container">
-                <!-- Vinculado directamente al archivo logohomefi.png en tu repositorio -->
+                <!-- Vinculado a tu archivo logohomefi.png en GitHub -->
                 <img src="logohomefi.png" alt="homeFi Logo">
                 <div class="verified-badge">
                     <i class="fa-solid fa-check"></i>
