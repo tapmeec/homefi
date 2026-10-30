@@ -36,52 +36,53 @@
             width: 100%;
             max-width: 460px;
             border-radius: 36px;
-            padding: 40px 24px 30px 24px;
+            padding: 45px 24px 30px 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Perfil / Header */
+        /* Perfil / Header con Círculo de Logo grande */
         .profile-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .logo-container {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #eaeaea;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 12px;
+            padding: 12px;
+            border: 2px solid #eaeaea;
             position: relative;
         }
 
         .logo-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: contain;
+            border-radius: 50%;
         }
 
-        /* Insignia de verificación verde */
+        /* Insignia de verificación verde opcional */
         .verified-badge {
             position: absolute;
-            bottom: 2px;
-            right: 2px;
+            bottom: 4px;
+            right: 4px;
             background-color: #22c55e;
             color: white;
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -90,27 +91,12 @@
             border: 2px solid white;
         }
 
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #111111;
-            margin-bottom: 4px;
-        }
-
-        .subtitle {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0098da;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
         p.bio {
             font-size: 0.85rem;
             color: #64748b;
             max-width: 320px;
             line-height: 1.4;
+            margin-top: 5px;
         }
 
         /* Contenedor de Enlaces */
@@ -192,16 +178,15 @@
 <body>
 
     <div class="main-card">
-        <!-- Perfil -->
+        <!-- Perfil / Logo -->
         <div class="profile-card">
             <div class="logo-container">
-                <img src="https://homefi.com.ec/wp-content/uploads/2024/06/Recurso-2-fotor-2024062814430-100x100.png" alt="homeFi Logo">
+                <!-- Vinculado directamente al archivo logohomefi.png en tu repositorio -->
+                <img src="logohomefi.png" alt="homeFi Logo">
                 <div class="verified-badge">
                     <i class="fa-solid fa-check"></i>
                 </div>
             </div>
-            <h1>homeFi</h1>
-            <div class="subtitle">Smart Home & Domótica en Ecuador</div>
             <p class="bio">Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.</p>
         </div>
 
@@ -229,7 +214,7 @@
                     </div>
                     <div class="link-text">
                         <h3>Atención por WhatsApp</h3>
-                        <span>+593 96 778 6868[cite: 1]</span>
+                        <span>+593 96 778 6868</span>
                     </div>
                 </div>
                 <i class="fa-solid fa-chevron-right link-arrow"></i>
