@@ -20,19 +20,24 @@
         }
 
         body {
-            background-color: #0b1120; /* Fondo general azul oscuro */
-            color: #ffffff;
+            background-color: #0d1527; /* Fondo general azul oscuro */
+            color: #1a1a1a;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 40px 20px;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .container {
+        /* Gran tarjeta blanca central */
+        .main-card {
+            background-color: #ffffff;
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
+            border-radius: 36px;
+            padding: 40px 24px 30px 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -44,21 +49,22 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .logo-container {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background-color: #131c31;
+            background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 15px;
             padding: 10px;
-            border: 1px solid #1f2d4a;
+            border: 1px solid #eaeaea;
+            position: relative;
         }
 
         .logo-container img {
@@ -67,55 +73,72 @@
             object-fit: contain;
         }
 
+        /* Insignia de verificación verde */
+        .verified-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background-color: #22c55e;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            border: 2px solid white;
+        }
+
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #111111;
             margin-bottom: 4px;
         }
 
         .subtitle {
             font-size: 0.85rem;
             font-weight: 600;
-            color: #00b4d8;
-            margin-bottom: 8px;
+            color: #0098da;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         p.bio {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: #64748b;
             max-width: 320px;
             line-height: 1.4;
         }
 
-        /* Contenedor de Enlaces (Burbujas blancas) */
+        /* Contenedor de Enlaces */
         .links-container {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .bio-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #ffffff; /* Burbuja blanca */
-            border: 1px solid #e5e5e5;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
             padding: 14px 18px;
-            border-radius: 14px;
+            border-radius: 18px;
             text-decoration: none;
             color: #1a1a1a;
             transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .bio-link:hover {
             transform: translateY(-2px);
-            border-color: #00b4d8;
-            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.25);
+            border-color: #0098da;
+            box-shadow: 0 6px 16px rgba(0, 152, 218, 0.12);
         }
 
         .link-left {
@@ -125,55 +148,57 @@
         }
 
         .link-icon-box {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background-color: #f4f6f8;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background-color: #f8fafc;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .link-text h3 {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #111111;
+            color: #1e293b;
             margin-bottom: 2px;
         }
 
         .link-text span {
             font-size: 0.75rem;
-            color: #666666;
+            color: #94a3b8;
         }
 
         .link-arrow {
             font-size: 0.8rem;
-            color: #cccccc;
+            color: #cbd5e1;
         }
 
-        /* Footer */
+        /* Footer dentro de la tarjeta blanca */
         footer {
-            margin-top: 35px;
+            margin-top: 30px;
             font-size: 0.75rem;
-            color: #64748b;
+            color: #94a3b8;
             text-align: center;
         }
 
-        footer a {
-            color: #cbd5e1;
-            text-decoration: none;
+        footer span {
             font-weight: 600;
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-card">
         <!-- Perfil -->
         <div class="profile-card">
             <div class="logo-container">
                 <img src="https://homefi.com.ec/wp-content/uploads/2024/06/Recurso-2-fotor-2024062814430-100x100.png" alt="homeFi Logo">
+                <div class="verified-badge">
+                    <i class="fa-solid fa-check"></i>
+                </div>
             </div>
             <h1>homeFi</h1>
             <div class="subtitle">Smart Home & Domótica en Ecuador</div>
@@ -241,7 +266,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>© 2026 <a href="https://homefi.com.ec/">homeFi</a>. Todos los derechos reservados.</p>
+            <p>Powered by <span>homeFi Ecuador</span></p>
         </footer>
     </div>
 
