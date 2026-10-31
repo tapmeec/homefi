@@ -193,7 +193,7 @@
 
         <!-- Enlaces -->
         <div class="links-container">
-            <!-- Botón de Exchange Contact (Generado por código, sin archivo .vcf externo) -->
+            <!-- Botón de Exchange Contact -->
             <a id="exchange-btn" class="bio-link">
                 <div class="link-left">
                     <div class="link-icon-box" style="color: #0098da;">
@@ -273,13 +273,13 @@
         </footer>
     </div>
 
-    <!-- Script inteligente para forzar la descarga correcta del contacto como VCF -->
+    <!-- Script inteligente para generar el contacto con el nombre HOMEFI -->
     <script>
         document.getElementById('exchange-btn').addEventListener('click', function() {
             const vcardData = 
 `BEGIN:VCARD
 VERSION:3.0
-FN:homeFi Smart Home
+FN:HOMEFI
 ORG:homeFi Ecuador
 TEL;TYPE=CELL:+593958845649
 EMAIL:contacto@homefi.com.ec
@@ -290,7 +290,7 @@ END:VCARD`;
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'homeFi.vcf';
+            a.download = 'HOMEFI.vcf';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
