@@ -162,13 +162,13 @@
             color: #cbd5e1;
         }
 
-        /* Footer ajustado: menor separación (gap) y w-44 para el logo */
+        /* Footer ajustado: w-40 y margen superior negativo para subirlo más */
         footer {
-            margin-top: 26px;
+            margin-top: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px; /* Espacio reducido para acercarlo al texto */
+            gap: 1px; /* Espacio mínimo */
             font-size: 0.75rem;
             color: #94a3b8;
         }
@@ -178,15 +178,16 @@
             transition: transform 0.2s ease;
             background: transparent;
             padding: 0;
+            margin-top: -4px; /* Sube la línea del logo un poco más hacia arriba */
         }
 
         .tapme-logo-link:hover {
             transform: scale(1.05);
         }
 
-        /* Ancho w-44 (11rem / 176px) */
-        .w-44 {
-            width: 11rem;
+        /* Ancho w-40 (10rem / 160px) */
+        .w-40 {
+            width: 10rem;
         }
 
         .tapme-logo-link img {
@@ -269,10 +270,10 @@
             </a>
         </div>
 
-        <!-- Footer con el logo controlado por w-44 y más cerca del texto -->
+        <!-- Footer con el logo controlado por w-40 y subido una línea más -->
         <footer>
             <span>Powered by</span>
-            <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link w-44" title="Contactar Tap Me">
+            <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link w-40" title="Contactar Tap Me">
                 <img src="logotapme.png" alt="Tap Me Logo">
             </a>
         </footer>
