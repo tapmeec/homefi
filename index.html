@@ -3,280 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homeFi | Link in Bio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Yezid Jaramillo | Link in Bio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fotonDark: '#0A0F1D',
+                        fotonCard: '#131C31',
+                        fotonBlue: '#0066FF',
+                        fotonBlueHover: '#0052CC',
+                        fotonBorder: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
         body {
-            background-color: #0d1527; /* Fondo general azul oscuro */
-            color: #1a1a1a;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0F1D;
+            background-image: radial-gradient(circle at 50% 0%, #111E38 0%, #0A0F1D 70%);
         }
-
-        /* Gran tarjeta blanca central */
-        .main-card {
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 480px;
-            border-radius: 36px;
-            padding: 50px 28px 32px 28px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .glass-card {
+            background: rgba(19, 28, 49, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 102, 255, 0.15);
         }
-
-        /* Perfil / Header con Círculo de Logo más grande y expandido */
-        .profile-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 28px;
-            width: 100%;
-        }
-
-        .logo-container {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            margin-bottom: 16px;
-            padding: 10px;
-            border: 2px solid #eaeaea;
-            position: relative;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        /* Insignia de verificación verde */
-        .verified-badge {
-            position: absolute;
-            bottom: 6px;
-            right: 6px;
-            background-color: #22c55e;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            border: 3px solid white;
-        }
-
-        p.bio {
-            font-size: 0.9rem;
-            color: #64748b;
-            max-width: 360px;
-            line-height: 1.4;
-            margin-top: 8px;
-        }
-
-        /* Contenedor de Enlaces */
-        .links-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .bio-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 15px 18px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: #1a1a1a;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-        }
-
-        .bio-link:hover {
-            transform: translateY(-2px);
-            border-color: #0098da;
-            box-shadow: 0 6px 16px rgba(0, 152, 218, 0.12);
-        }
-
-        .link-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .link-icon-box {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
-            background-color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .link-text h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 2px;
-        }
-
-        .link-text span {
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
-
-        .link-arrow {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-        }
-
-        /* Footer con el control de ancho w-48 aplicado para el logo de Tap Me */
-        footer {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
-
-        .tapme-logo-link {
-            display: inline-block;
-            transition: transform 0.2s ease;
-            background: transparent;
-            padding: 0;
-        }
-
-        .tapme-logo-link:hover {
-            transform: scale(1.05);
-        }
-
-        /* Equivalente estricto de w-48 (12rem / 192px de ancho controlado) */
-        .w-48 {
-            width: 12rem;
-        }
-
-        .tapme-logo-link img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
+        .glass-card:hover {
+            border-color: rgba(0, 102, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.15);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen text-slate-100 flex flex-col items-center justify-between py-10 px-4 selection:bg-fotonBlue selection:text-white">
 
-    <div class="main-card">
-        <!-- Perfil / Logo Principal -->
-        <div class="profile-card">
-            <div class="logo-container">
-                <img src="logohomefi.png" alt="homeFi Logo">
-                <div class="verified-badge">
-                    <i class="fa-solid fa-check"></i>
-                </div>
+    <!-- Header / Contenedor Principal -->
+    <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6">
+
+        <!-- Logo Principal -->
+        <div class="flex flex-col items-center space-y-4">
+            <div class="w-full max-w-[260px] flex items-center justify-center p-2">
+                <img src="logofoton.png" alt="Logo Yezid Jaramillo" class="w-full h-auto object-contain">
             </div>
-            <p class="bio">Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.</p>
+
+            <!-- Nombre -->
+            <div class="flex flex-col items-center space-y-1 mt-4">
+                <a href="#" class="text-2xl font-bold tracking-tight text-white hover:text-fotonBlue transition-colors duration-200">
+                    Yezid Jaramillo
+                </a>
+                <p class="text-xs text-slate-400 tracking-wide font-medium">Enlace Personal & Contacto</p>
+            </div>
         </div>
 
-        <!-- Enlaces -->
-        <div class="links-container">
-            <!-- Página Web -->
-            <a href="https://homefi.com.ec/" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #0098da;">
-                        <i class="fa-solid fa-globe"></i>
+        <!-- Línea separadora sutil -->
+        <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-fotonBlue to-transparent opacity-60"></div>
+
+        <!-- Botones de Enlace (WhatsApp y Correo) -->
+        <div class="w-full space-y-4">
+            
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/593999921212" target="_blank" rel="noopener noreferrer" 
+               class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
                     </div>
-                    <div class="link-text">
-                        <h3>Tienda Online Oficial</h3>
-                        <span>homefi.com.ec</span>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-emerald-400 transition-colors">WhatsApp</h3>
+                        <p class="text-xs text-slate-400">Escríbeme directamente</p>
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
             </a>
 
-            <!-- WhatsApp -->
-            <a href="https://wa.me/593958845649" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #25D366;">
-                        <i class="fa-brands fa-whatsapp"></i>
+            <!-- Botón Correo -->
+            <a href="mailto:ypjaramillo@fotonecuador" 
+               class="glass-card w-full p-4 rounded-2xl flex items-center justify-between transition-all duration-300 transform hover:-translate-y-1 group">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-fotonBlue/10 border border-fotonBlue/30 flex items-center justify-center text-fotonBlue group-hover:bg-fotonBlue group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-envelope text-xl"></i>
                     </div>
-                    <div class="link-text">
-                        <h3>Atención por WhatsApp</h3>
-                        <span>+593 95 884 5649</span>
+                    <div>
+                        <h3 class="font-semibold text-white group-hover:text-fotonBlue transition-colors">Correo Electrónico</h3>
+                        <p class="text-xs text-slate-400">Contáctame por email</p>
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-fotonBlue group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
             </a>
 
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/homefi.ec?utm_source=ig_web_button_share_sheet&psln=ZDNlZDc0MzIxNw==" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #E1306C;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div class="link-text">
-                        <h3>Síguenos en Instagram</h3>
-                        <span>@homefi.ec</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
-            <!-- Reseña de Google -->
-            <a href="https://search.google.com/local/writereview?placeid=ChIJMfLmfxGR1ZERCpkq7V22lEo" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #FBBC05;">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="link-text">
-                        <h3>Califícanos en Google</h3>
-                        <span>Déjanos tu reseña 5 estrellas</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
         </div>
 
-        <!-- Footer con el logo controlado por w-48 y su enlace de WhatsApp -->
-        <footer>
-            <span>Powered by</span>
-            <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link w-48" title="Contactar Tap Me">
-                <img src="logotapme.png" alt="Tap Me Logo">
-            </a>
-        </footer>
-    </div>
+    </main>
+
+    <!-- Footer con Powered by y el logo de Tap Me (w-44) enlazado a WhatsApp -->
+    <footer class="mt-8 w-full flex flex-col items-center space-y-1">
+        <span class="text-xs text-slate-400 font-medium tracking-wide">Powered by</span>
+        <a href="https://wa.me/593999921212" target="_blank" rel="noopener noreferrer" 
+           class="w-44 flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+            <img src="logotapmeblanco.png" alt="Logo Tap Me" class="w-full h-auto object-contain">
+        </a>
+    </footer>
 
 </body>
 </html>
