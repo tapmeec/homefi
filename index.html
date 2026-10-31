@@ -43,7 +43,7 @@
             align-items: center;
         }
 
-        /* Perfil / Header con Círculo de Logo más grande y expandido */
+        /* Perfil / Header */
         .profile-card {
             display: flex;
             flex-direction: column;
@@ -63,14 +63,15 @@
             justify-content: center;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
             margin-bottom: 16px;
-            padding: 10px;
+            padding: 4px; /* Reducido para que la imagen ocupe más espacio (más cerca) */
             border: 2px solid #eaeaea;
             position: relative;
+            overflow: hidden; /* Asegura que la imagen expandida respete el círculo */
         }
 
         .logo-container img {
-            width: 100%;
-            height: 100%;
+            width: 115%;  /* Imagen ampliada para que se sienta más cerca y grande */
+            height: 115%;
             object-fit: contain;
             border-radius: 50%;
         }
@@ -90,6 +91,7 @@
             justify-content: center;
             font-size: 0.85rem;
             border: 3px solid white;
+            z-index: 10;
         }
 
         p.bio {
@@ -162,13 +164,13 @@
             color: #cbd5e1;
         }
 
-        /* Footer ajustado: w-40 y margen superior negativo para subirlo más */
+        /* Footer con el logo de Tap Me (w-40) */
         footer {
             margin-top: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1px; /* Espacio mínimo */
+            gap: 1px;
             font-size: 0.75rem;
             color: #94a3b8;
         }
@@ -178,14 +180,13 @@
             transition: transform 0.2s ease;
             background: transparent;
             padding: 0;
-            margin-top: -4px; /* Sube la línea del logo un poco más hacia arriba */
+            margin-top: -4px;
         }
 
         .tapme-logo-link:hover {
             transform: scale(1.05);
         }
 
-        /* Ancho w-40 (10rem / 160px) */
         .w-40 {
             width: 10rem;
         }
@@ -200,7 +201,7 @@
 <body>
 
     <div class="main-card">
-        <!-- Perfil / Logo Principal -->
+        <!-- Perfil / Logo Principal Expandido -->
         <div class="profile-card">
             <div class="logo-container">
                 <img src="logohomefi.png" alt="homeFi Logo">
@@ -270,7 +271,7 @@
             </a>
         </div>
 
-        <!-- Footer con el logo controlado por w-40 y subido una línea más -->
+        <!-- Footer -->
         <footer>
             <span>Powered by</span>
             <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link w-40" title="Contactar Tap Me">
