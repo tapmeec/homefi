@@ -65,11 +65,11 @@
             margin-bottom: 16px;
             padding: 4px;
             border: 2px solid #eaeaea;
-            overflow: hidden; /* Asegura que la imagen expandida respete el círculo perfecto */
+            overflow: hidden;
         }
 
         .logo-container img {
-            width: 115%;  /* Imagen ampliada para que se sienta más cerca y grande */
+            width: 115%;
             height: 115%;
             object-fit: contain;
             border-radius: 50%;
@@ -103,6 +103,7 @@
             color: #1a1a1a;
             transition: all 0.25s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            cursor: pointer;
         }
 
         .bio-link:hover {
@@ -182,7 +183,7 @@
 <body>
 
     <div class="main-card">
-        <!-- Perfil / Logo Principal Limpio -->
+        <!-- Perfil / Logo Principal -->
         <div class="profile-card">
             <div class="logo-container">
                 <img src="logohomefi.png" alt="homeFi Logo">
@@ -192,6 +193,20 @@
 
         <!-- Enlaces -->
         <div class="links-container">
+            <!-- Botón de Exchange Contact (Generado por código, sin archivo .vcf externo) -->
+            <a id="exchange-btn" class="bio-link">
+                <div class="link-left">
+                    <div class="link-icon-box" style="color: #0098da;">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <div class="link-text">
+                        <h3>Exchange Contact</h3>
+                        <span>Guardar tarjeta de contacto</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-download link-arrow"></i>
+            </a>
+
             <!-- Página Web -->
             <a href="https://homefi.com.ec/" target="_blank" class="bio-link">
                 <div class="link-left">
@@ -258,5 +273,29 @@
         </footer>
     </div>
 
+    <!-- Script inteligente para forzar la descarga correcta del contacto como VCF -->
+    <script>
+        document.getElementById('exchange-btn').addEventListener('click', function() {
+            const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:homeFi Smart Home
+ORG:homeFi Ecuador
+TEL;TYPE=CELL:+593958845649
+EMAIL:contacto@homefi.com.ec
+URL:https://homefi.com.ec/
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'homeFi.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
 </body>
 </html>
