@@ -162,24 +162,39 @@
             color: #cbd5e1;
         }
 
-        /* Footer dentro de la tarjeta blanca */
+        /* Footer con el logo de Tap Me interactivo */
         footer {
             margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
             font-size: 0.75rem;
             color: #94a3b8;
-            text-align: center;
         }
 
-        footer span {
-            font-weight: 600;
-            color: #64748b;
+        .tapme-logo-link {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            /* Si necesitas que destaque mejor sobre el fondo blanco del pie, puedes descomentar la siguiente línea de fondo oscuro opcional: */
+            /* background-color: #0d1527; padding: 6px 12px; border-radius: 8px; */
+        }
+
+        .tapme-logo-link:hover {
+            transform: scale(1.08);
+        }
+
+        .tapme-logo-link img {
+            height: 24px; /* Tamaño optimizado para el footer */
+            width: auto;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
 
     <div class="main-card">
-        <!-- Perfil / Logo -->
+        <!-- Perfil / Logo Principal -->
         <div class="profile-card">
             <div class="logo-container">
                 <img src="logohomefi.png" alt="homeFi Logo">
@@ -198,62 +213,4 @@
                     <div class="link-icon-box" style="color: #0098da;">
                         <i class="fa-solid fa-globe"></i>
                     </div>
-                    <div class="link-text">
-                        <h3>Tienda Online Oficial</h3>
-                        <span>homefi.com.ec</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/593958845649" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #25D366;">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div class="link-text">
-                        <h3>Atención por WhatsApp</h3>
-                        <span>+593 95 884 5649</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/homefi.ec?utm_source=ig_web_button_share_sheet&psln=ZDNlZDc0MzIxNw==" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #E1306C;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div class="link-text">
-                        <h3>Síguenos en Instagram</h3>
-                        <span>@homefi.ec</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
-            <!-- Reseña de Google -->
-            <a href="https://search.google.com/local/writereview?placeid=ChIJMfLmfxGR1ZERCpkq7V22lEo" target="_blank" class="bio-link">
-                <div class="link-left">
-                    <div class="link-icon-box" style="color: #FBBC05;">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="link-text">
-                        <h3>Califícanos en Google</h3>
-                        <span>Déjanos tu reseña 5 estrellas</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>Powered by <span>homeFi Ecuador</span></p>
-        </footer>
-    </div>
-
-</body>
-</html>
+                    <div
