@@ -162,7 +162,7 @@
             color: #cbd5e1;
         }
 
-        /* Footer con el logo de Tap Me interactivo */
+        /* Footer con el logo limpio sin ningún fondo */
         footer {
             margin-top: 30px;
             display: flex;
@@ -176,9 +176,8 @@
         .tapme-logo-link {
             display: inline-block;
             transition: transform 0.2s ease;
-            background-color: #0d1527; /* Fondo oscuro opcional para que resalte perfectamente el logo blanco */
-            padding: 6px 14px;
-            border-radius: 10px;
+            background: transparent; /* Sin fondo */
+            padding: 0;              /* Sin relleno extra */
         }
 
         .tapme-logo-link:hover {
@@ -186,7 +185,7 @@
         }
 
         .tapme-logo-link img {
-            height: 22px;
+            height: 24px;
             width: auto;
             object-fit: contain;
         }
@@ -265,11 +264,11 @@
             </a>
         </div>
 
-        <!-- Footer con el logo blanco de Tap Me y su enlace de WhatsApp -->
+        <!-- Footer con el logo logotapme.png sin fondo y su enlace de WhatsApp -->
         <footer>
             <span>Powered by</span>
             <a href="https://wa.me/593988725270" target="_blank" class="tapme-logo-link" title="Contactar Tap Me">
-                <img src="logotapmeblanco.png" alt="Tap Me Logo">
+                <img src="logotapme.png" alt="Tap Me Logo">
             </a>
         </footer>
     </div>
