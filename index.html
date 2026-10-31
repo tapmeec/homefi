@@ -63,10 +63,9 @@
             justify-content: center;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
             margin-bottom: 16px;
-            padding: 4px; /* Reducido para que la imagen ocupe más espacio (más cerca) */
+            padding: 4px;
             border: 2px solid #eaeaea;
-            position: relative;
-            overflow: hidden; /* Asegura que la imagen expandida respete el círculo */
+            overflow: hidden; /* Asegura que la imagen expandida respete el círculo perfecto */
         }
 
         .logo-container img {
@@ -74,24 +73,6 @@
             height: 115%;
             object-fit: contain;
             border-radius: 50%;
-        }
-
-        /* Insignia de verificación verde */
-        .verified-badge {
-            position: absolute;
-            bottom: 6px;
-            right: 6px;
-            background-color: #22c55e;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            border: 3px solid white;
-            z-index: 10;
         }
 
         p.bio {
@@ -164,7 +145,7 @@
             color: #cbd5e1;
         }
 
-        /* Footer con el logo de Tap Me (w-40) */
+        /* Footer con el logo de Tap Me (w-40) limpio */
         footer {
             margin-top: 24px;
             display: flex;
@@ -201,13 +182,10 @@
 <body>
 
     <div class="main-card">
-        <!-- Perfil / Logo Principal Expandido -->
+        <!-- Perfil / Logo Principal Limpio -->
         <div class="profile-card">
             <div class="logo-container">
                 <img src="logohomefi.png" alt="homeFi Logo">
-                <div class="verified-badge">
-                    <i class="fa-solid fa-check"></i>
-                </div>
             </div>
             <p class="bio">Tecnología inteligente para transformar cada espacio de tu hogar en una experiencia única.</p>
         </div>
