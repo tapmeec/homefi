@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homeFi | Link in Bio</title>
+    <title>HomeFi | Link in Bio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,18 +273,22 @@
         </footer>
     </div>
 
-    <!-- Script inteligente para generar el contacto -->
+    <!-- Script de vCard actualizado para Diego Barreiro - HomeFi -->
     <script>
-        document.getElementById('exchange-btn').addEventListener('click', function() {
-            const vcardData = 
-`BEGIN:VCARD
-VERSION:3.0
-FN:DIEGO BARREIRO HOMEFI
-ORG:homeFi Ecuador
-TEL;TYPE=CELL:+593958845649
-EMAIL:info@homefi.com.ec
-URL:https://homefi.com.ec/
-END:VCARD`;
+        document.getElementById('exchange-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const vcardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "N:Barreiro;Diego;;;",
+                "FN:Diego Barreiro",
+                "ORG:HomeFi",
+                "TEL;TYPE=CELL:+593958845649",
+                "EMAIL:info@homefi.com.ec",
+                "URL:https://homefi.com.ec/",
+                "END:VCARD"
+            ].join("\n");
 
             const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
             const url = URL.createObjectURL(blob);
@@ -294,7 +298,7 @@ END:VCARD`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            setTimeout(() => URL.revokeObjectURL(url), 100);
         });
     </script>
 </body>
